@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Vue.js</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Slots & named slots</h1>
+
+    <main>
+        <alerta tipo="alerta--exito" posicion="alerta--arriba-derecha">
+            <!-- Pasar informacion al slot -->
+            <template slot="header">Todo ok :)</template>
+
+            <!-- <template> no se crea la tag :) -->
+            <template>Hola mundo :)</template>
+
+            <template slot="footer">Puedes continuar</template>
+        </alerta>
+
+        <alerta tipo="alerta--error" posicion="alerta--arriba-izquierda">
+            <template slot="header">hubo un error :(</template>
+            <template>datos incompletos</template>
+            <template slot="footer">Revise sus datos, por favor</template>
+        </alerta>
+
+        <alerta tipo="alerta--advertencia" posicion="alerta--abajo-izquierda">
+            <template slot="header">Atencion</template>
+            <template>Le quedan pocos minutos..</template>
+            <template slot="footer">apurese, por favor</template>
+        </alerta>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.15/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

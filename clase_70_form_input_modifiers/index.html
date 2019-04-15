@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Input Modifiers</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Formulario</h1>
+        <hr>
+        <form @submit.prevent="enviar">
+            <!-- 
+                lazy
+                reacciona despues de un 'blur'
+                es decir: fuera del 'input'
+            -->
+            <!-- <input type="text" v-model.lazy="formulario"> -->
+            
+            <!-- '.number' modifier -->
+            <!-- <input type="number" v-model.number="formulario"> -->
+            
+            <!-- Combinar 'lazy' and '.number' -->
+            <!-- <input type="number" v-model.lazy.number="formulario"> -->
+            
+            <!-- .trim -->
+            <input type="text" v-model.lazy.trim="formulario">
+            <input type="submit" value="Enviar">
+        </form>
+        <hr>
+        <pre>{{ $data }}</pre>
+    </div>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

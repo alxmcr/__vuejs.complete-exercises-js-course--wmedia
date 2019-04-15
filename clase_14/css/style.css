@@ -1,0 +1,82 @@
+h2 {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+li {
+  cursor: pointer;
+}
+
+main {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+p {
+  display: block;
+}
+
+pre {
+  border: 1px dashed red;
+  border-radius: 10px;
+}
+
+#app {
+  border: 1px solid red;
+  border-radius: 10px;
+}
+
+.completado {
+  text-decoration: line-through;
+}
+
+/* Prefix a las propiedades */
+/* 
+Transition Classes
+
+- v-enter: (entrada) Inicio de la animacion (durante 1 frame) se aplica la clase
+- v-enter-active: (entrada, "lenta" NO de golpe)
+- v-enter-to
+- v-leave
+- v-leave-active (salida, "lenta" NO de golpe)
+- v-leave-to: (salida) Ultimo estado de la transicion 
+*/
+
+/* transition  */
+.aparecer-enter {
+  opacity: 0;
+}
+
+.aparecer-enter-active {
+  transition: opacity 1s;
+}
+
+.aparecer-leave-to {
+  opacity: 0;
+}
+
+.aparecer-leave-active {
+  transition: opacity 1s;
+}
+
+/* Animation */
+.bote-enter-active {
+  animation: bounce-in 0.5s;
+}
+
+.bote-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

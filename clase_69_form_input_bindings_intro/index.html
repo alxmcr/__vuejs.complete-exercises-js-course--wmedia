@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Input Bindings</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Formulario</h1>
+        <hr>
+        <form @submit.prevent="enviar">
+            <label for="nombre">Nombre:</label>
+            <input required type="text" id="nombre" v-model="formulario.nombre">
+            <label for="apellidos">Apellidos:</label>
+            <input required type="text" id="apellidos" v-model="formulario.apellidos">
+            <label for="consulta">Consulta:</label>
+            <textarea required rows="5" id="consulta" v-model="formulario.consulta"></textarea>
+    
+            <input required type="radio" id="si" value="Si" v-model="formulario.cliente">
+            <label for="si">Soy cliente</label>
+            <br>
+            <input type="radio" id="no" value="No" v-model="formulario.cliente">
+            <label for="no">No soy cliente</label>
+            <br>
+    
+            <label for="conocio">¿Dónde nos conoció?</label>
+            <select required id="conocio"  v-model="formulario.conocio">
+                <option v-for="(opcion, index) in conocio" :value="opcion">
+                    {{opcion}}
+                </option>
+            </select>
+    
+            <input required type="checkbox" id="acepto" v-model="formulario.acepta">
+    
+            <label for="acepto">Acepto las condiciones</label>
+            <input v-if="formulario.acepta" type="submit" value="Enviar">
+        </form>
+        <hr>
+        <pre>{{ $data }}</pre>
+    </div>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

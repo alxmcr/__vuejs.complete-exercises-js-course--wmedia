@@ -1,0 +1,17 @@
+li {
+    cursor: pointer;
+}
+
+main {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#app {
+    border: 1px solid red;
+    border-radius: 10px;  
+}
+
+.completado {
+    text-decoration: line-through;
+}

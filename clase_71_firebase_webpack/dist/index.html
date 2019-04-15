@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue with Firebase & Webpack</title>
+</head>
+<body>
+    <h1>Vue with Firebase & Webpack</h1>
+    <div id="app">
+        <form @submit.prevent="enviarMensaje" id="formulario">
+          <textarea v-model="mensaje" name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+          <br>
+          <input type="submit" value="Enviar mensaje">
+        </form>
+        <hr>
+        <h2>Mensajes</h2>
+        <ul>
+          <li v-for="(mensaje, index) in mensajes" :key="index">
+            <span contenteditable="true" @blur="editarMensaje($event, mensaje.key)">{{mensaje.mensaje}}</span>
+            <small><i>{{mensaje.username}}</i></small>
+            <button @click="eliminarMensaje(mensaje.key)">X</button
+          </li>
+        </ul>
+    </div>
+    <script src="bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Vue.js</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Componentes templates</h1>
+
+    <!-- Forma #1, #2 -->
+    <!-- <main>
+        <elegir-ganador :listado="personas"></elegir-ganador>
+        <pre>{{$data}}</pre>
+    </main> -->
+
+    <!-- Forma #2 -->
+    <!-- <script type="text/x-template" id="elegir-jugador-template">
+        <div>
+            <h2 v-if="existeGanador">El ganador es: {{ganador}}</h2>
+            <template v-else>
+                <h3>Participantes:</h3>
+                <ul>
+                <li v-for="persona in listado">{{persona}}</li>
+                </ul>
+            </template>
+            <button @click="elegirGanador">Elegir ganador</button>
+        </div>
+    </script> -->
+
+    <!-- Forma #3 -->
+    <main>
+        <elegir-ganador :listado="personas" inline-template>
+            <div>
+                <h2 v-if="existeGanador">El ganador es: {{ganador}}</h2>
+                <template v-else>
+                    <h3>Participantes:</h3>
+                    <ul>
+                    <li v-for="persona in listado">{{persona}}</li>
+                    </ul>
+                </template>
+                <button @click="elegirGanador">Elegir ganador</button>
+            </div>
+        </elegir-ganador>
+        <pre>{{$data}}</pre>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

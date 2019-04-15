@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Vue.js</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Transiciones</h1>
+
+    <main>
+        <button @click="mostrar = !mostrar">Mostrar/Ocultar</button>
+
+        <!-- transition -->
+        <transition name="aparecer">
+            <h2 v-if="mostrar" v-text="mensajes.transicion"></h2>
+        </transition>
+
+        <!-- animation (without response to event) run automaticaly -->
+        <transition name="aparecer" appear>
+                <h2 v-if="mostrar" v-text="mensajes.transicion"></h2>
+        </transition>
+
+        <!-- animation -->
+        <transition name="bote">
+            <h2 v-if="mostrar" v-text="mensajes.animacion"></h2>
+        </transition>
+
+        <!-- Animation.css -->
+        <!-- class="animated cualquierClase"  -->
+        <!-- animate because is of Animate.css -->
+        <transition name="animate_con_css"
+                    enter-active-class="animated rotateInUpLeft"
+                    leave-active-class="animated zoomOutUp">>
+
+            <h2 v-if="mostrar" v-text="mensajes.animationCustom"></h2>
+        </transition> 
+
+        <!-- transition entre diferentes elementos -->
+        <transition name="aparecer" mode="out-in">
+            <h2 v-if="mostrar" v-text="mensajes.entreElementos"></h2>
+            <h3 v-else>No hay mensaje</h3>  
+        </transition>
+
+        <pre>{{$data}}</pre>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

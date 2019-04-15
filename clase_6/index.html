@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Vue.js</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Propiedades computadas</h1>
+
+    <main>
+
+        <!-- 
+            <h2>{{ mensajeAlReves }}</h2>
+            <h2>{{ mensaje }}</h2>
+        -->
+
+        <ul>
+            <li v-for="tarea in tareasConPrioridad ">
+                {{ tarea }}
+            </li>
+        </ul>
+        <!-- prevent: No permitir que se refresque la página -->
+        <form v-on:submit.prevent="agregarTarea()">
+            <input type="text" placeholder="Introduce tu tarea" v-model="newTarea">
+            <input type="submit" value="Enviar tarea">
+        </form>
+
+        <pre>{{$data}}</pre>
+    </main>
+
+    <span>Nota.- Se puede cambiar la propiedad de una tarea:</span>
+    <pre>$vm0.tareas[1].prioridad = true</pre>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

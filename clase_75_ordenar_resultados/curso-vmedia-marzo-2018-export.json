@@ -1,0 +1,56 @@
+{
+  "chats" : {
+    "-L83EXSxkTBieoqn35S9" : {
+      "mensaje" : "uno",
+      "username" : "alejandro"
+    },
+    "-L83EaFpjqt5me92ELCR" : {
+      "mensaje" : "cinco",
+      "username" : "alejandro"
+    },
+    "-L83SfD4tV9Hd1d1krDd" : {
+      "mensaje" : "Hola, mundo, desde SET",
+      "username" : "juanwmedia"
+    },
+    "-L83StDYWj5U-8WPxOlV" : {
+      "mensaje" : "Hola, mundo, desde SET",
+      "username" : "alejandro"
+    }
+  },
+  "gatos" : {
+    "Guizmo" : {
+      "color" : "negro"
+    },
+    "Moma" : {
+      "color" : "atrigrado",
+      "edad" : 3
+    },
+    "Nino" : {
+      "color" : "negro",
+      "edad" : 1
+    },
+    "Rouco" : {
+      "color" : "blanco y negro",
+      "edad" : 5
+    }
+  },
+  "perfiles" : {
+    "alejandro" : {
+      "chats" : {
+        "-L83StDYWj5U-8WPxOlV" : true
+      },
+      "ciudad" : "La Paz",
+      "likes" : 29,
+      "pais" : "Bolivia",
+      "password" : "abc123",
+      "username" : "alejandro"
+    }
+  },
+  "votos" : {
+    "guizmo" : 999,
+    "moma" : 100,
+    "nino" : 150,
+    "peluchito" : 102,
+    "rouco" : 599
+  }
+}

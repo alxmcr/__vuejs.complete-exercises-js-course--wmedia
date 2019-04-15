@@ -1,0 +1,51 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Vue.js</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- <h1> Ejercicio de componentes </h1> -->
+    
+    <main>
+        <usuarios></usuarios>
+    </main>
+
+    <!-- Template -->
+    <template id="usuarios-template">
+        <div>
+            <section class="cabecera">
+                <slot>
+                    <h1>Usuarios de mi startup</h1>
+                </slot>
+                <input type="search" placeholder="Filtrar usuarios" v-model="busqueda">
+            </section>
+            <section class="usuarios">
+                <usuario :datos="usuario" v-for="(usuario, index) in filtrarUsuarios" :key="index"></usuario>
+            </section>
+        </div>
+    </template>
+
+    <template id="usuario-template">
+        <div class="usuario">
+            <img align="left" :src="datos.foto" :alt="datos.nombre">
+            <section>
+                <h1>{{datos.nombre}}</h1>
+                <small>{{datos.correoe}}</small>
+            </section>
+        </div>
+    </template>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.15/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
